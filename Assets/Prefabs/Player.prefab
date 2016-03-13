@@ -472,9 +472,6 @@ MonoBehaviour:
     xMax: 6.7
     yMin: -4.7
     yMax: 4.7
-  projectile: {fileID: 100000, guid: 498f72572bb7f4e4095221376c9fd32a, type: 2}
-  projectileSpawn: {fileID: 400004}
-  fireRate: 0.009
 --- !u!114 &11463070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -488,7 +485,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 100000, guid: 498f72572bb7f4e4095221376c9fd32a, type: 2}
   projectileSpawn: {fileID: 400004}
-  fireRate: 0.25
+  fireRate: 0.5
+  shotsPerBurst: 25
 --- !u!198 &19813268
 ParticleSystem:
   m_ObjectHideFlags: 1
