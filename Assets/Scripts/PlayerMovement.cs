@@ -9,30 +9,11 @@ public class Boundary
     public float yMax;
 }
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public float tilt;
     public Boundary boundary;
-
-    public GameObject projectile;
-    public Transform projectileSpawn;
-    public float fireRate;
-
-    private float nextFire;
-
-    public void Update()
-    {
-        if (Input.GetButton("Fire1") && Time.time > this.nextFire)
-        {
-            this.nextFire = Time.time + this.fireRate;
-            UnityEngine.Object.Instantiate(
-                this.projectile, this.projectileSpawn.position, this.projectileSpawn.rotation);
-            UnityEngine.Object.Instantiate(
-                this.projectile, this.projectileSpawn.position, this.projectileSpawn.rotation);
-            this.GetComponent<AudioSource>().Play();
-        }
-    }
 
     public void FixedUpdate()
     {

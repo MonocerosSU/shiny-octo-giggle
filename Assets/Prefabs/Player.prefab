@@ -27,6 +27,7 @@ GameObject:
   - 64: {fileID: 6400000}
   - 82: {fileID: 8200000}
   - 114: {fileID: 11440868}
+  - 114: {fileID: 11463070}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -60,7 +61,7 @@ GameObject:
   - 198: {fileID: 19813268}
   - 199: {fileID: 19900784}
   m_Layer: 0
-  m_Name: 'Fx_Glow '
+  m_Name: fxAfterburner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.997}
+  m_LocalPosition: {x: 0, y: -0.071, z: 0.583}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400006}
@@ -471,6 +472,20 @@ MonoBehaviour:
     xMax: 6.7
     yMin: -4.7
     yMax: 4.7
+  projectile: {fileID: 100000, guid: 498f72572bb7f4e4095221376c9fd32a, type: 2}
+  projectileSpawn: {fileID: 400004}
+  fireRate: 0.009
+--- !u!114 &11463070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0155a8d52a393c24d8785ee3ff824322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   projectile: {fileID: 100000, guid: 498f72572bb7f4e4095221376c9fd32a, type: 2}
   projectileSpawn: {fileID: 400004}
   fireRate: 0.25
