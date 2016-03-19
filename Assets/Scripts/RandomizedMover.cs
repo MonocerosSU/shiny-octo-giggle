@@ -15,12 +15,4 @@ public class RandomizedMover : MonoBehaviour
         this.GetComponent<Rigidbody>().velocity += this.transform.up 
             * Random.Range(this.upDownMin, this.upDownMax);
     }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Boundary")
-        {
-            UnityEngine.Object.Destroy(this.gameObject);
-        }
-    }
 }
