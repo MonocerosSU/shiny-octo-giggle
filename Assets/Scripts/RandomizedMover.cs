@@ -3,7 +3,6 @@ using System.Collections;
 
 public class RandomizedMover : MonoBehaviour
 {
-    public float lifeTime;
     public float upDownMin;
     public float upDownMax;
     public float speedMin;
@@ -17,10 +16,9 @@ public class RandomizedMover : MonoBehaviour
             * Random.Range(this.upDownMin, this.upDownMax);
     }
 
-    void LateUpdate()
+    void OnTriggerExit(Collider other)
     {
-        this.lifeTime -= Time.deltaTime;
-        if (this.lifeTime <= 0f)
+        if (other.gameObject.tag == "Boundary")
         {
             UnityEngine.Object.Destroy(this.gameObject);
         }
