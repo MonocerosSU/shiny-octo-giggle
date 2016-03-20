@@ -3,37 +3,42 @@ using System.Collections;
 
 public class DestroyByHitpoints : MonoBehaviour
 {
-    public GameObject explosionEffect;
+    public GameObject damageEffect;
+    public GameObject destructionEffect;
     public float hitPoints;
 
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "Projectile")
+        if (this.hitPoints <= 0)
         {
-            return;
+            this.DestroyThis();
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        this.hitPoints -= damage;
+
+        if (this.damageEffect != null)
+        {
+            UnityEngine.Object.Instantiate(
+                this.damageEffect, this.transform.position, this.transform.rotation);
         }
 
-        Component damagerClass = other.GetComponent<Damager>();
-        if (damagerClass != null)
+        if (this.hitPoints <= 0)
         {
-            this.hitPoints -= ((Damager)damagerClass).damagePoints;
-            
-            // TODO: Add damage effect.
-
-            if (this.hitPoints <= 0)
-            {
-                UnityEngine.Object.Destroy(this.gameObject);
-
-                if (this.explosionEffect != null)
-                {
-                    UnityEngine.Object.Instantiate(
-                        this.explosionEffect, this.transform.position, this.transform.rotation);
-                }
-            }
+            this.DestroyThis();
         }
-        else
+    }
+
+    private void DestroyThis()
+    {
+        UnityEngine.Object.Destroy(this.gameObject);
+
+        if (this.destructionEffect != null)
         {
-            Debug.Log("Projectile " + other.gameObject.name + " does not have a Damager script attached to it!");
+            UnityEngine.Object.Instantiate(
+                this.destructionEffect, this.transform.position, this.transform.rotation);
         }
     }
 }

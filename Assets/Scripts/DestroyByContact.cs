@@ -3,19 +3,29 @@ using System.Collections;
 
 public class DestroyByContact : MonoBehaviour
 {
+    public GameObject destructionEffect;
+
     public void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Boundary")
+        {
+            return;
+        }
+
         // In case of projectiles, they should not destroy 
-        // themselves if they are of the same prefab name, 
-        // or they contain the prefab name of the object spawning them.
+        // themselves if they are of the same name, 
+        // or they contain the name of the object spawning them.
         if (this.gameObject.name.Contains(other.gameObject.name))
         {
             return;
         }
 
-        if (other.gameObject.tag != "Boundary")
+        if (this.destructionEffect != null)
         {
-            UnityEngine.Object.Destroy(this.gameObject);
+            UnityEngine.Object.Instantiate(
+                this.destructionEffect, this.transform.position, this.transform.rotation);
         }
+
+        UnityEngine.Object.Destroy(this.gameObject);
     }
 }

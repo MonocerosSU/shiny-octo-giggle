@@ -9,11 +9,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 54: {fileID: 5400000}
-  - 136: {fileID: 13600000}
+  - 135: {fileID: 13538624}
   - 114: {fileID: 11453330}
   - 114: {fileID: 11403460}
   - 114: {fileID: 11412084}
   - 114: {fileID: 11493932}
+  - 114: {fileID: 11444748}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Projectile
@@ -323,6 +324,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb427b20e035c54e92f56d07aeb02d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11444748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a599d9fd6bd0f974abab94db53cb1413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: 5
 --- !u!114 &11453330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,8 +362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7788f046b8fb3e44a6c8c27742639ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &13600000
-CapsuleCollider:
+  destructionEffect: {fileID: 112102, guid: 4a7eb19c4ea4c264a98fb20ee6b5341f, type: 2}
+--- !u!135 &13538624
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -358,9 +372,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.03
-  m_Height: 0.5
-  m_Direction: 2
+  serializedVersion: 2
+  m_Radius: 0.17
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
@@ -413,6 +426,14 @@ Prefab:
       propertyPath: damagePoints
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rotation
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: destructionEffect
+      value: 
+      objectReference: {fileID: 112102, guid: 4a7eb19c4ea4c264a98fb20ee6b5341f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}

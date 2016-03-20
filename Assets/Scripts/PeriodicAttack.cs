@@ -8,18 +8,20 @@ public class PeriodicAttack : MonoBehaviour
     public float fireRate;
     public float delay;
 
-    void Start()
+    private AudioSource audioSource;
+
+    public void Start()
     {
+        this.audioSource = this.GetComponent<AudioSource>();
         this.InvokeRepeating("Fire", this.delay, this.fireRate);
     }
 
-    void Fire()
+    public void Fire()
     {
-        UnityEngine.Object.Instantiate(
-            this.projectile,
-            this.projectileSpawn.position,
-            this.projectileSpawn.rotation);
+        UnityEngine.Object newProjectile = UnityEngine.Object.Instantiate(
+            this.projectile, this.projectileSpawn.position, this.projectileSpawn.rotation);
+        newProjectile.name = this.name + "'s " + newProjectile.name;
 
-        this.GetComponent<AudioSource>().Play();
+        this.audioSource.Play();
     }
 }
