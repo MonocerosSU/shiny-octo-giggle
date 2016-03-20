@@ -21,7 +21,7 @@ public class DestroyByHitpoints : MonoBehaviour
 
         if (this.damageEffect != null)
         {
-            UnityEngine.Object.Instantiate(
+            GameObject.Instantiate(
                 this.damageEffect, this.transform.position, this.transform.rotation);
         }
 
@@ -33,11 +33,11 @@ public class DestroyByHitpoints : MonoBehaviour
 
     private void DestroyThis()
     {
-        UnityEngine.Object.Destroy(this.gameObject);
+        GameObject.Destroy(this.gameObject);
 
         if (this.destructionEffect != null)
         {
-            UnityEngine.Object.Instantiate(
+            GameObject.Instantiate(
                 this.destructionEffect, this.transform.position, this.transform.rotation);
         }
     }

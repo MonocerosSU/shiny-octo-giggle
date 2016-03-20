@@ -22,10 +22,10 @@ public class DestroyByContact : MonoBehaviour
 
         if (this.destructionEffect != null)
         {
-            UnityEngine.Object.Instantiate(
+            GameObject.Instantiate(
                 this.destructionEffect, this.transform.position, this.transform.rotation);
         }
 
-        UnityEngine.Object.Destroy(this.gameObject);
+        GameObject.Destroy(this.gameObject);
     }
 }

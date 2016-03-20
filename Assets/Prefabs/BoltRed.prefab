@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7788f046b8fb3e44a6c8c27742639ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructionEffect: {fileID: 0}
+  destructionEffect: {fileID: 141842, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
 --- !u!114 &11435558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,6 +186,10 @@ Prefab:
       propertyPath: damagePoints
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: destructionEffect
+      value: 
+      objectReference: {fileID: 141842, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
