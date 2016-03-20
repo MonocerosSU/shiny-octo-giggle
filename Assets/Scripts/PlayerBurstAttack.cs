@@ -22,7 +22,7 @@ public class PlayerBurstAttack : MonoBehaviour
             this.nextFire = Time.time + this.fireRate;
             for (int i = 0; i < this.shotsPerBurst; i++)
             {
-                UnityEngine.Object newProjectile = UnityEngine.Object.Instantiate(
+                var newProjectile = GameObject.Instantiate(
                     this.projectile, this.projectileSpawn.position, this.projectileSpawn.rotation);
                 newProjectile.name = this.name + "'s " + newProjectile.name;
             }
