@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+
+using UnityEngine;
 using System.Collections;
+
+using Random = UnityEngine.Random;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float tilt;
     public float maxDistance;
     public float smoothing;
     public Range startWait;
@@ -11,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     public Range maneuverWait;
     public Transform sceneBoundary;
 
+    private float rotationSpeed;
     private float targetManeuver;
     private Vector3 currentSpeed;
     private Boundary boundary;
@@ -26,6 +30,9 @@ public class EnemyMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
+        this.rotationSpeed += this.targetManeuver * 2;
+        this.transform.Rotate(Vector3.forward * (this.rotationSpeed * Time.deltaTime));
+
         float newManeuver = Mathf.MoveTowards(this.rigidBody.velocity.y, this.targetManeuver, this.smoothing * Time.deltaTime);
         this.rigidBody.velocity = new Vector3(this.currentSpeed.x, newManeuver, this.currentSpeed.z);
         this.rigidBody.position =
@@ -33,9 +40,6 @@ public class EnemyMovement : MonoBehaviour
                 Mathf.Clamp(this.rigidBody.position.x, this.boundary.xMin, this.boundary.xMax),
                 Mathf.Clamp(this.rigidBody.position.y, this.boundary.yMin, this.boundary.yMax),
                 0.0f);
-
-        this.rigidBody.rotation = Quaternion.Euler(
-            this.rigidBody.velocity.y * this.tilt, 90.0f, 90.0f);
     }
 
     private IEnumerator Evade()
