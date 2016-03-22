@@ -18,7 +18,7 @@ public class PeriodicAttack : MonoBehaviour
 
     public void Fire()
     {
-        UnityEngine.Object newProjectile = UnityEngine.Object.Instantiate(
+        var newProjectile = GameObject.Instantiate(
             this.projectile, this.projectileSpawn.position, this.projectileSpawn.rotation);
         newProjectile.name = this.name + "'s " + newProjectile.name;
 

@@ -5,7 +5,7 @@ public class DestroyByBoundary : MonoBehaviour
 {
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Boundary")
+        if (other.gameObject.CompareTag("Boundary"))
         {
             UnityEngine.Object.Destroy(this.gameObject);
         }
