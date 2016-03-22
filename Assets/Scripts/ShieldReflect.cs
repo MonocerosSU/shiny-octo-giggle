@@ -10,6 +10,14 @@ public class ShieldReflect : MonoBehaviour {
             return;
         }
 
+        string projectileName = other.gameObject.name;
+        string parentName = this.gameObject.transform.parent.gameObject.name;
+
+        if (projectileName.Contains(parentName))
+        {
+            return;
+        }
+
         other.name = "Reflected projectile.";
         Rigidbody otherRigidBody = other.GetComponent<Rigidbody>();
 

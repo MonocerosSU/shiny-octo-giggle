@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11430928}
   m_Layer: 0
   m_Name: BoltRed
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,6 +253,10 @@ Prefab:
       propertyPath: destructionEffect
       value: 
       objectReference: {fileID: 141842, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
