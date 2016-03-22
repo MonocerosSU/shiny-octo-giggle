@@ -25,9 +25,10 @@ GameObject:
   - 4: {fileID: 400006}
   - 54: {fileID: 5400000}
   - 64: {fileID: 6400000}
-  - 82: {fileID: 8200000}
   - 114: {fileID: 11440868}
   - 114: {fileID: 11463070}
+  - 114: {fileID: 11433264}
+  - 82: {fileID: 8200000}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -454,6 +455,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11433264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4e9a1b128e05a4bbb20cdd3fdb551e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageEffect: {fileID: 0}
+  destructionEffect: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 2}
+  hitPoints: 500
 --- !u!114 &11440868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,11 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   tilt: 1
-  boundary:
-    xMin: -6.7
-    xMax: 6.7
-    yMin: -4.7
-    yMax: 4.7
+  sceneBoundary: {fileID: 0}
 --- !u!114 &11463070
 MonoBehaviour:
   m_ObjectHideFlags: 1

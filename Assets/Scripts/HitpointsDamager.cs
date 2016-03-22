@@ -7,7 +7,9 @@ public class HitpointsDamager : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Boundary")
+        if (other.gameObject.CompareTag("Boundary") || 
+            other.gameObject.CompareTag("Shield") ||
+            other.gameObject.CompareTag("Projectile"))
         {
             return;
         }
