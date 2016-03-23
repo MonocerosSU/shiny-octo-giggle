@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbcf6e8e0762224387a26cdfab12dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 100000, guid: 0f075d34b0283de43a4ba54f5f4b4cca, type: 2}
+  projectile: {fileID: 155602, guid: 54b6972c021bedf4f87b159ee07f80c6, type: 2}
   projectileSpawn: {fileID: 473904}
   fireRate: 1.5
   delay: 1.5
