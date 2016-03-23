@@ -10,9 +10,9 @@ public class RandomizedMover : MonoBehaviour
 
     void Start()
     {
-        this.GetComponent<Rigidbody>().velocity = this.transform.forward 
-            * Random.Range(this.speedMin, this.speedMax);
-        this.GetComponent<Rigidbody>().velocity += this.transform.up 
-            * Random.Range(this.upDownMin, this.upDownMax);
+        this.GetComponent<Rigidbody>().velocity = 
+            this.transform.forward * Random.Range(this.speedMin, this.speedMax);
+        this.GetComponent<Rigidbody>().velocity += 
+            this.transform.up * Random.Range(this.upDownMin, this.upDownMax);
     }
 }
