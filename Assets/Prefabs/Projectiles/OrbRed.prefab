@@ -33,7 +33,7 @@ GameObject:
   - 114: {fileID: 11426112}
   - 114: {fileID: 11421650}
   m_Layer: 0
-  m_Name: FireOrb
+  m_Name: OrbRed
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
