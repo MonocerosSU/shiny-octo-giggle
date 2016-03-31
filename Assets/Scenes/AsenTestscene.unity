@@ -122,7 +122,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: c8d83bd93bc4f1a41b60d87280006f8e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11440868, guid: c8d83bd93bc4f1a41b60d87280006f8e, type: 2}
       propertyPath: sceneBoundary
@@ -159,6 +159,8 @@ GameObject:
   - 114: {fileID: 419673357}
   - 114: {fileID: 419673356}
   - 225: {fileID: 419673355}
+  - 114: {fileID: 419673360}
+  - 114: {fileID: 419673361}
   m_Layer: 5
   m_Name: HUDCanvas
   m_TagString: Untagged
@@ -251,6 +253,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &419673360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 419673354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833846c982829994aa5d8b36d77b8fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1006696124}
+  healthSlider: {fileID: 1046664302}
+--- !u!114 &419673361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 419673354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6861e27dc5261c64d8c72da5f1be3b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 1046664302}
+  damageImage: {fileID: 1169240468}
+  flashSpeed: 5
+  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+  damaged: 0
 --- !u!1 &476966247
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,23 +649,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: c8d83bd93bc4f1a41b60d87280006f8e, type: 2}
   m_PrefabInternal: {fileID: 207692732}
---- !u!114 &1006696125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1006696124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebd3a9f04bf24b64ba3005eaa43e5829, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  healthSlider: {fileID: 1046664302}
-  damageImage: {fileID: 1169240468}
-  flashSpeed: 5
-  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
-  damaged: 0
 --- !u!1 &1046664300
 GameObject:
   m_ObjectHideFlags: 0
