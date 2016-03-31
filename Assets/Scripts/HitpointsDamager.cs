@@ -4,7 +4,7 @@ using System.Collections;
 public class HitpointsDamager : MonoBehaviour
 {
     public float damagePoints;
-
+    
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Boundary") || 
@@ -22,14 +22,10 @@ public class HitpointsDamager : MonoBehaviour
             return;
         }
 
-        Component hitpointsClass = other.GetComponent<DestroyByHitpoints>();
+        DestroyByHitpoints hitpointsClass = other.GetComponent<DestroyByHitpoints>();
         if (hitpointsClass != null)
         {
-            ((DestroyByHitpoints)hitpointsClass).TakeDamage(this.damagePoints);
-        }
-        else
-        {
-            Debug.Log("Object " + other.gameObject.name + " does not have a Hitpoints script attached to it!");
+            hitpointsClass.TakeDamage(this.damagePoints);
         }
     }
 }

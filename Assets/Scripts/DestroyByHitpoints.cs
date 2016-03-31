@@ -7,14 +7,6 @@ public class DestroyByHitpoints : MonoBehaviour
     public GameObject destructionEffect;
     public float hitPoints;
 
-    //public void OnTriggerEnter(Collider other)
-    //{
-    //    if (this.hitPoints <= 0)
-    //    {
-    //        this.DestroyThis();
-    //    }
-    //}
-
     public void TakeDamage(float damage)
     {
         this.hitPoints -= damage;

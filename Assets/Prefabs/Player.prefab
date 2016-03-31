@@ -482,6 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   tilt: 1
+  tiltAxis: 0
   sceneBoundary: {fileID: 0}
 --- !u!114 &11463070
 MonoBehaviour:
