@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e281b9704d12f5e4e85c449ed8400ea1
-timeCreated: 1459513867
+timeCreated: 1459540941
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -32,7 +32,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 1
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -57,10 +57,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 12
-        y: 39
+        y: 153
         width: 36
         height: 92
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
@@ -73,49 +73,54 @@ TextureImporter:
     - name: SteredennLazer_1
       rect:
         serializedVersion: 2
-        x: 69
-        y: 36
+        x: 70
+        y: 149
         width: 100
-        height: 99
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -50, y: 49.5}
-        - {x: -50, y: -49.5}
-        - {x: 50, y: -49.5}
-        - {x: 50, y: 49.5}
+      - - {x: -50, y: 50}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 50}
     - name: SteredennLazer_2
       rect:
         serializedVersion: 2
-        x: 182
-        y: 35
-        width: 60
-        height: 99
+        x: 178
+        y: 148
+        width: 64
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -26, y: 49.5}
-        - {x: -28, y: 35.5}
-        - {x: -28, y: -49.5}
-        - {x: 9, y: -49.5}
-        - {x: 20, y: -46.5}
-        - {x: 30, y: -19.5}
-        - {x: 30, y: 34.5}
-        - {x: 3, y: 49.5}
-      - - {x: -27, y: -16.5}
-        - {x: -28, y: -18.5}
-        - {x: -28, y: -22.5}
-        - {x: -26, y: -24.5}
-        - {x: -20, y: -24.5}
-        - {x: -20, y: -16.5}
-      - - {x: -30, y: 43.5}
-        - {x: -30, y: 35.5}
-        - {x: -26, y: 35.5}
-        - {x: -24, y: 37.5}
-        - {x: -24, y: 41.5}
-        - {x: -26, y: 43.5}
+      - - {x: -25, y: 50}
+        - {x: -26, y: 33}
+        - {x: -26, y: -50}
+        - {x: 28, y: -50}
+        - {x: 32, y: -27}
+        - {x: 32, y: 30}
+        - {x: 10, y: 50}
+      - - {x: -32, y: -32}
+        - {x: -32, y: -40}
+        - {x: -28, y: -40}
+        - {x: -26, y: -38}
+        - {x: -26, y: -34}
+        - {x: -28, y: -32}
+      - - {x: -26, y: -16}
+        - {x: -26, y: -23}
+        - {x: -24, y: -24}
+        - {x: -18, y: -24}
+        - {x: -18, y: -16}
+      - - {x: -28, y: 44}
+        - {x: -30, y: 43}
+        - {x: -30, y: 36}
+        - {x: -23, y: 36}
+        - {x: -22, y: 38}
+        - {x: -22, y: 43}
+        - {x: -24, y: 44}
     outline: []
   spritePackingTag: 
   userData: 

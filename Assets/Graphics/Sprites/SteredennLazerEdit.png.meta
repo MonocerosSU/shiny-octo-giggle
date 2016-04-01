@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: bc5afb9f3fa571545beb397a466ee219
+timeCreated: 1459543915
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SteredennLazerEdit_0
+    21300002: SteredennLazerEdit_1
+    21300004: SteredennLazerEdit_2
+    21300006: SteredennLazerEdit_3
+    21300008: SteredennLazerEdit_4
+    21300010: SteredennLazerEdit_5
+    21300012: SteredennLazerEdit_6
+    21300014: SteredennLazerEdit_7
+    21300016: SteredennLazerEdit_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SteredennLazerEdit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 171
+        width: 64
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 29.5}
+        - {x: -19, y: 17.5}
+        - {x: -19, y: -13.5}
+        - {x: -18, y: -20.5}
+        - {x: 4, y: -29.5}
+        - {x: 32, y: -29.5}
+        - {x: 32, y: 29.5}
+        - {x: 29, y: 30.5}
+    - name: SteredennLazerEdit_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 170
+        width: 100
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 35, z: 5, w: 35}
+      outline:
+      - - {x: -47, y: 31}
+        - {x: -50, y: 30}
+        - {x: -50, y: -29}
+        - {x: 50, y: -29}
+        - {x: 50, y: 30}
+        - {x: 40, y: 31}
+    - name: SteredennLazerEdit_2
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 171
+        width: 64
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 31.5}
+        - {x: -32, y: -26.5}
+        - {x: -24, y: -32.5}
+        - {x: 4, y: -32.5}
+        - {x: 14, y: -30.5}
+        - {x: 31, y: -16.5}
+        - {x: 31, y: 23.5}
+        - {x: 15, y: 31.5}
+    - name: SteredennLazerEdit_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 86
+        width: 64
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 29.5}
+        - {x: -19, y: 17.5}
+        - {x: -19, y: -13.5}
+        - {x: -18, y: -20.5}
+        - {x: 4, y: -29.5}
+        - {x: 32, y: -29.5}
+        - {x: 32, y: 29.5}
+        - {x: 29, y: 30.5}
+    - name: SteredennLazerEdit_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 85
+        width: 100
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 35, z: 5, w: 35}
+      outline:
+      - - {x: -47, y: 31}
+        - {x: -50, y: 30}
+        - {x: -50, y: -29}
+        - {x: 50, y: -29}
+        - {x: 50, y: 30}
+        - {x: 40, y: 31}
+    - name: SteredennLazerEdit_5
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 86
+        width: 64
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 31.5}
+        - {x: -32, y: -26.5}
+        - {x: -24, y: -32.5}
+        - {x: 4, y: -32.5}
+        - {x: 14, y: -30.5}
+        - {x: 31, y: -16.5}
+        - {x: 31, y: 23.5}
+        - {x: 15, y: 31.5}
+    - name: SteredennLazerEdit_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 64
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 2, y: 29.5}
+        - {x: -19, y: 17.5}
+        - {x: -19, y: -13.5}
+        - {x: -18, y: -20.5}
+        - {x: 4, y: -29.5}
+        - {x: 32, y: -29.5}
+        - {x: 32, y: 29.5}
+        - {x: 29, y: 30.5}
+    - name: SteredennLazerEdit_7
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 100
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 35, z: 5, w: 35}
+      outline:
+      - - {x: -47, y: 31}
+        - {x: -50, y: 30}
+        - {x: -50, y: -29}
+        - {x: 50, y: -29}
+        - {x: 50, y: 30}
+        - {x: 40, y: 31}
+    - name: SteredennLazerEdit_8
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1
+        width: 65
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 31.5}
+        - {x: -32.5, y: -26.5}
+        - {x: -24.5, y: -32.5}
+        - {x: 3.5, y: -32.5}
+        - {x: 13.5, y: -30.5}
+        - {x: 30.5, y: -16.5}
+        - {x: 30.5, y: 23.5}
+        - {x: 14.5, y: 31.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

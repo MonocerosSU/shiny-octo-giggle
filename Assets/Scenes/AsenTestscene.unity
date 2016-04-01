@@ -478,6 +478,10 @@ Prefab:
       objectReference: {fileID: 1578893156}
     - target: {fileID: 140608, guid: 2d82a1a19c924d246bb26b46208fa714, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11478340, guid: 2d82a1a19c924d246bb26b46208fa714, type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -653,6 +657,21 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: c8d83bd93bc4f1a41b60d87280006f8e, type: 2}
   m_PrefabInternal: {fileID: 207692732}
+--- !u!114 &1006696125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1006696124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1481072acb5dccc4f88a13919bb7f66f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserStart: {fileID: 191310, guid: 7c899f91f9e3e974f88be65e46b1235c, type: 2}
+  laserMiddle: {fileID: 111358, guid: 42077e9ada6cff94fac18c9934566d4d, type: 2}
+  laserEnd: {fileID: 152126, guid: 67106cff4fec2d849b3186cdb0d605fb, type: 2}
+  laserSpawn: {fileID: 1665568928}
 --- !u!1 &1046664300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,6 +1254,10 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!4 &1665568928 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400004, guid: c8d83bd93bc4f1a41b60d87280006f8e, type: 2}
+  m_PrefabInternal: {fileID: 207692732}
 --- !u!1001 &1962073457
 Prefab:
   m_ObjectHideFlags: 0
