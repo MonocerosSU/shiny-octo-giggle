@@ -430,6 +430,46 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 19837030, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19837030, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 19808150, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19808150, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 19806742, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19806742, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 19869492, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19869492, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 19841096, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19841096, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 700
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a8ccbcc1b2f4ab43b243ddebc17234c, type: 2}
   m_IsPrefabParent: 0
@@ -476,6 +516,10 @@ Prefab:
       propertyPath: sceneBoundary
       value: 
       objectReference: {fileID: 1578893156}
+    - target: {fileID: 140608, guid: 2d82a1a19c924d246bb26b46208fa714, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d82a1a19c924d246bb26b46208fa714, type: 2}
   m_IsPrefabParent: 0
@@ -1051,7 +1095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1657656114
 MonoBehaviour:
   m_ObjectHideFlags: 0
