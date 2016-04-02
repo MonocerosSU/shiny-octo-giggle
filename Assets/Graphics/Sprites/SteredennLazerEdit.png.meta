@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: bc5afb9f3fa571545beb397a466ee219
-timeCreated: 1459543915
+timeCreated: 1459583089
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -64,20 +64,20 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 171
-        width: 64
+        width: 54
         height: 85
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 5, w: 0}
       outline:
-      - - {x: 2, y: 29.5}
-        - {x: -19, y: 17.5}
-        - {x: -19, y: -13.5}
-        - {x: -18, y: -20.5}
-        - {x: 4, y: -29.5}
-        - {x: 32, y: -29.5}
-        - {x: 32, y: 29.5}
-        - {x: 29, y: 30.5}
+      - - {x: 13, y: 30.5}
+        - {x: -14, y: 15.5}
+        - {x: -14, y: -16.5}
+        - {x: 18, y: -29.5}
+        - {x: 25, y: -29.5}
+        - {x: 27, y: -28.5}
+        - {x: 27, y: 29.5}
+        - {x: 26, y: 30.5}
     - name: SteredennLazerEdit_1
       rect:
         serializedVersion: 2
@@ -107,32 +107,31 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -32, y: 31.5}
-        - {x: -32, y: -26.5}
-        - {x: -24, y: -32.5}
-        - {x: 4, y: -32.5}
-        - {x: 14, y: -30.5}
-        - {x: 31, y: -16.5}
-        - {x: 31, y: 23.5}
-        - {x: 15, y: 31.5}
+        - {x: -32, y: -32.5}
+        - {x: 27, y: -32.5}
+        - {x: 31, y: -28.5}
+        - {x: 31, y: 17.5}
+        - {x: 23, y: 31.5}
     - name: SteredennLazerEdit_3
       rect:
         serializedVersion: 2
         x: 0
         y: 86
-        width: 64
+        width: 54
         height: 85
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 5, w: 0}
       outline:
-      - - {x: 2, y: 29.5}
-        - {x: -19, y: 17.5}
-        - {x: -19, y: -13.5}
-        - {x: -18, y: -20.5}
-        - {x: 4, y: -29.5}
-        - {x: 32, y: -29.5}
-        - {x: 32, y: 29.5}
-        - {x: 29, y: 30.5}
+      - - {x: 17, y: 29.5}
+        - {x: -9, y: 15.5}
+        - {x: -14, y: 10.5}
+        - {x: -14, y: -4.5}
+        - {x: -13, y: -11.5}
+        - {x: 9, y: -28.5}
+        - {x: 17, y: -29.5}
+        - {x: 27, y: -29.5}
+        - {x: 27, y: 29.5}
     - name: SteredennLazerEdit_4
       rect:
         serializedVersion: 2
@@ -174,20 +173,21 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 1
-        width: 64
+        width: 54
         height: 85
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 5, w: 0}
       outline:
-      - - {x: 2, y: 29.5}
-        - {x: -19, y: 17.5}
-        - {x: -19, y: -13.5}
-        - {x: -18, y: -20.5}
-        - {x: 4, y: -29.5}
-        - {x: 32, y: -29.5}
-        - {x: 32, y: 29.5}
-        - {x: 29, y: 30.5}
+      - - {x: 17, y: 29.5}
+        - {x: -9, y: 15.5}
+        - {x: -14, y: 10.5}
+        - {x: -14, y: -4.5}
+        - {x: -13, y: -11.5}
+        - {x: 9, y: -28.5}
+        - {x: 17, y: -29.5}
+        - {x: 27, y: -29.5}
+        - {x: 27, y: 29.5}
     - name: SteredennLazerEdit_7
       rect:
         serializedVersion: 2
@@ -218,9 +218,8 @@ TextureImporter:
       outline:
       - - {x: -32.5, y: 31.5}
         - {x: -32.5, y: -26.5}
-        - {x: -24.5, y: -32.5}
-        - {x: 3.5, y: -32.5}
-        - {x: 13.5, y: -30.5}
+        - {x: -20.5, y: -32.5}
+        - {x: 5.5, y: -32.5}
         - {x: 30.5, y: -16.5}
         - {x: 30.5, y: 23.5}
         - {x: 14.5, y: 31.5}
