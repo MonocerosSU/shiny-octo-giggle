@@ -2201,7 +2201,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11478340, guid: 2d82a1a19c924d246bb26b46208fa714, type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474846, guid: 2d82a1a19c924d246bb26b46208fa714, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d82a1a19c924d246bb26b46208fa714, type: 2}
@@ -2423,7 +2427,9 @@ MonoBehaviour:
   inputWarmUpTime: 1
   inputEffectCooldown: 0.33
   warmUpEffect: {fileID: 115030, guid: f246e45c85332eb4abdc0f293de50b97, type: 2}
+  laserDamage: 13
   maxLaserSize: 18
+  damageEffect: {fileID: 0}
 --- !u!82 &1006696126
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2622,7 +2628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 2
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

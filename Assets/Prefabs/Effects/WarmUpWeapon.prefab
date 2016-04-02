@@ -137,7 +137,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190688}
   serializedVersion: 2
-  lengthInSec: 1.5
+  lengthInSec: 0.5
   startDelay:
     scalar: 0
     maxCurve:
@@ -1606,7 +1606,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117054}
   serializedVersion: 2
-  lengthInSec: 1.5
+  lengthInSec: 0.5
   startDelay:
     scalar: 0
     maxCurve:
@@ -3105,7 +3105,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186106}
   serializedVersion: 2
-  lengthInSec: 1.5
+  lengthInSec: 0.5
   startDelay:
     scalar: 0
     maxCurve:
@@ -4684,6 +4684,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lengthInSec
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

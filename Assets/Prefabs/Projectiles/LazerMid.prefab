@@ -12,7 +12,7 @@ GameObject:
   - 95: {fileID: 9544438}
   m_Layer: 0
   m_Name: LazerMid
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,6 +88,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300002, guid: bc5afb9f3fa571545beb397a466ee219,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Laser
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 111358}
