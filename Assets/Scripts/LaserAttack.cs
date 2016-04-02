@@ -66,8 +66,9 @@ public class LaserAttack : MonoBehaviour
         if (this.effectCooldown <= 0)
         {
             this.effectCooldown = this.inputEffectCooldown;
-            GameObject.Instantiate(
-                this.warmUpEffect, this.laserSpawn.position, this.laserSpawn.rotation);
+            var newEffect = GameObject.Instantiate(
+                this.warmUpEffect, this.laserSpawn.position, this.laserSpawn.rotation) as GameObject;
+            newEffect.transform.parent = this.transform;
         }
 
         this.effectCooldown -= Time.deltaTime;
