@@ -63,29 +63,6 @@ public class LaserAttack : MonoBehaviour
         }
     }
 
-    private void PlayWarmUpEffect()
-    {
-        if (this.warmUpEffect == null)
-        {
-            return;
-        }
-        
-        // This check prevents spawning too much of the effect.
-        if (this.effectCooldown <= 0)
-        {
-            this.effectCooldown = this.inputEffectCooldown;
-            var newEffect = GameObject.Instantiate(
-                this.warmUpEffect, this.laserSpawn.position, this.laserSpawn.rotation) as GameObject;
-
-            if (newEffect != null)
-            {
-                newEffect.transform.parent = this.transform;
-            }
-        }
-
-        this.effectCooldown -= Time.deltaTime;
-    }
-
     private void FireTheLaser()
     {
         // Create the laser from the prefabs
@@ -116,7 +93,7 @@ public class LaserAttack : MonoBehaviour
             if (hitpointsClass != null)
             {
                 hitpointsClass.TakeDamage(this.laserDamage);
-                this.PlayDamageEffect();
+                this.PlayDamageEffect(hit.point);
             }
         }
 
@@ -137,9 +114,38 @@ public class LaserAttack : MonoBehaviour
         }
     }
 
-    private void PlayDamageEffect()
+    private void PlayDamageEffect(Vector3 point)
     {
-        // TODO: Implement me.
+        if (this.damageEffect == null)
+        {
+            return;
+        }
+
+        GameObject.Instantiate(this.damageEffect, point, new Quaternion());
+
+    }
+    
+    private void PlayWarmUpEffect()
+    {
+        if (this.warmUpEffect == null)
+        {
+            return;
+        }
+
+        // This check prevents spawning too much of the effect.
+        if (this.effectCooldown <= 0)
+        {
+            this.effectCooldown = this.inputEffectCooldown;
+            var newEffect = GameObject.Instantiate(
+                this.warmUpEffect, this.laserSpawn.position, this.laserSpawn.rotation) as GameObject;
+
+            if (newEffect != null)
+            {
+                newEffect.transform.parent = this.transform;
+            }
+        }
+
+        this.effectCooldown -= Time.deltaTime;
     }
 
     private RaycastHit CheckHits(RaycastHit[] hits, float maxDistance)

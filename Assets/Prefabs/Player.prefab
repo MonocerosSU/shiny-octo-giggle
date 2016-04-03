@@ -26,7 +26,9 @@ GameObject:
   - 54: {fileID: 5400000}
   - 64: {fileID: 6400000}
   - 114: {fileID: 11440868}
+  - 114: {fileID: 11436452}
   - 114: {fileID: 11463070}
+  - 114: {fileID: 11492044}
   - 114: {fileID: 11433264}
   - 82: {fileID: 8200000}
   m_Layer: 0
@@ -426,7 +428,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -468,7 +470,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageEffect: {fileID: 0}
   destructionEffect: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 2}
-  hitPoints: 500
+  hitPoints: 1000
+--- !u!114 &11436452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3d3711b3f249a458d4d52e2b80e5ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeTime: 0.2
+  quickAttack: {fileID: 11463070}
+  chargeAttack: {fileID: 11492044}
 --- !u!114 &11440868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -481,8 +497,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  tilt: 1
-  tiltAxis: 0
+  tilt: 4
+  tiltAxis: 2
   sceneBoundary: {fileID: 0}
 --- !u!114 &11463070
 MonoBehaviour:
@@ -499,6 +515,28 @@ MonoBehaviour:
   projectileSpawn: {fileID: 400004}
   fireRate: 0.25
   shotsPerBurst: 25
+--- !u!114 &11492044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1481072acb5dccc4f88a13919bb7f66f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserStart: {fileID: 191310, guid: 7c899f91f9e3e974f88be65e46b1235c, type: 2}
+  laserMiddle: {fileID: 111358, guid: 42077e9ada6cff94fac18c9934566d4d, type: 2}
+  laserEnd: {fileID: 152126, guid: 67106cff4fec2d849b3186cdb0d605fb, type: 2}
+  laserSpawn: {fileID: 400004}
+  inputWarmUpTime: 1
+  inputEffectCooldown: 0.33
+  warmUpEffect: {fileID: 115030, guid: f246e45c85332eb4abdc0f293de50b97, type: 2}
+  isFiring: 0
+  laserDamage: 13
+  maxLaserSize: 18
+  damageEffect: {fileID: 112102, guid: 4a7eb19c4ea4c264a98fb20ee6b5341f, type: 2}
 --- !u!198 &19813268
 ParticleSystem:
   m_ObjectHideFlags: 1
