@@ -573,6 +573,10 @@ Prefab:
       propertyPath: sceneBoundary
       value: 
       objectReference: {fileID: 1578893156}
+    - target: {fileID: 11463070, guid: c8d83bd93bc4f1a41b60d87280006f8e, type: 2}
+      propertyPath: fireRate
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8d83bd93bc4f1a41b60d87280006f8e, type: 2}
   m_IsPrefabParent: 0
@@ -1047,7 +1051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1657656114
 MonoBehaviour:
   m_ObjectHideFlags: 0

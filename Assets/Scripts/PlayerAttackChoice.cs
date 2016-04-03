@@ -26,12 +26,12 @@ public class PlayerAttackChoice : MonoBehaviour
         }
         if (Input.GetButtonUp("Fire1"))
         {
-            this.stopwatch.Stop();
+            this.stopwatch.Pause();
             if (this.stopwatch.Time <= this.chargeTime)
             {
                 this.quickAttack.Fire();
             }
-            this.stopwatch.StopAndReset();
+            this.stopwatch.Stop();
         }
         if (Input.GetButton("Fire1") && this.stopwatch.Time >= this.chargeTime)
         {
