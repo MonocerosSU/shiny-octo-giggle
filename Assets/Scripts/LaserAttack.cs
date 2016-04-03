@@ -18,6 +18,7 @@ public class LaserAttack : MonoBehaviour
     public GameObject warmUpEffect;
 
     [Header("Other parameters:")]
+    public bool isFiring;
     public float laserDamage = 13f;
     public float maxLaserSize = 18f;
     public GameObject damageEffect;
@@ -39,7 +40,7 @@ public class LaserAttack : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (this.isFiring)
         {
             this.warmUpTime -= Time.deltaTime;
             if (this.warmUpTime <= 0)

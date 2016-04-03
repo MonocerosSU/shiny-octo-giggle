@@ -2398,6 +2398,7 @@ GameObject:
   - 54: {fileID: 1006696131}
   - 64: {fileID: 1006696130}
   - 114: {fileID: 1006696129}
+  - 114: {fileID: 1006696132}
   - 114: {fileID: 1006696128}
   - 114: {fileID: 1006696125}
   - 114: {fileID: 1006696127}
@@ -2427,6 +2428,7 @@ MonoBehaviour:
   inputWarmUpTime: 1
   inputEffectCooldown: 0.33
   warmUpEffect: {fileID: 115030, guid: f246e45c85332eb4abdc0f293de50b97, type: 2}
+  isFiring: 0
   laserDamage: 13
   maxLaserSize: 18
   damageEffect: {fileID: 0}
@@ -2527,7 +2529,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1006696124}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0155a8d52a393c24d8785ee3ff824322, type: 3}
   m_Name: 
@@ -2581,6 +2583,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1006696132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1006696124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3d3711b3f249a458d4d52e2b80e5ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeTime: 0.2
+  quickAttack: {fileID: 1006696128}
+  chargeAttack: {fileID: 1006696125}
 --- !u!1 &1046664300
 GameObject:
   m_ObjectHideFlags: 0

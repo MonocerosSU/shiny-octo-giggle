@@ -15,9 +15,9 @@ public class PlayerBurstAttack : MonoBehaviour
         this.audioSource = this.GetComponent<AudioSource>();
     }
 
-    public void Update()
+    public void Fire()
     {
-        if (Input.GetButton("Fire1") && Time.time > this.nextFire)
+        if (Time.time > this.nextFire)
         {
             this.nextFire = Time.time + this.fireRate;
             for (int i = 0; i < this.shotsPerBurst; i++)
