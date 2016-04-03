@@ -9,8 +9,7 @@ public class DestroyByHitpoints : MonoBehaviour
 	public int scoreValue;
 	public ScoreCount scoreCount;
 
-   
-
+    private bool isMarkedForDestruction = false;
 	public void TakeDamage(float damage)
     {
         this.hitPoints -= damage;
@@ -21,7 +20,7 @@ public class DestroyByHitpoints : MonoBehaviour
                 this.damageEffect, this.transform.position, this.transform.rotation);
         }
 
-        if (this.hitPoints <= 0)
+        if (this.hitPoints <= 0 && !this.isMarkedForDestruction)
         {
             this.DestroyThis();
         }
@@ -29,17 +28,15 @@ public class DestroyByHitpoints : MonoBehaviour
 
     private void DestroyThis()
     {
-        GameObject.Destroy(this.gameObject);
-
         if (this.destructionEffect != null)
         {
             GameObject.Instantiate(
                 this.destructionEffect, this.transform.position, this.transform.rotation);
         }
-    
-		scoreCount.AddScore (scoreValue);
-		Destroy(this.gameObject);
-		Destroy(gameObject);
-	
-	}
+
+        this.scoreCount.AddScore(this.scoreValue);
+
+        this.isMarkedForDestruction = true;
+        GameObject.Destroy(this.gameObject);
+    }
 }
