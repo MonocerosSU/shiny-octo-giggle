@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         this.boundary = new Boundary(this.sceneBoundary, this.GetComponent<Collider>().bounds);
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
         this.Move();
         this.RestrictToScreen();
