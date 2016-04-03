@@ -6,8 +6,12 @@ public class DestroyByHitpoints : MonoBehaviour
     public GameObject damageEffect;
     public GameObject destructionEffect;
     public float hitPoints;
+	public int scoreValue;
+	public ScoreCount scoreCount;
 
-    public void TakeDamage(float damage)
+   
+
+	public void TakeDamage(float damage)
     {
         this.hitPoints -= damage;
 
@@ -32,5 +36,10 @@ public class DestroyByHitpoints : MonoBehaviour
             GameObject.Instantiate(
                 this.destructionEffect, this.transform.position, this.transform.rotation);
         }
-    }
+    
+		scoreCount.AddScore (scoreValue);
+		Destroy(this.gameObject);
+		Destroy(gameObject);
+	
+	}
 }
