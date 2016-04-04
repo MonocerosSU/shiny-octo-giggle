@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using UnityEngine.UI;
+
 public class ScoreCount : MonoBehaviour {
 
-	public GUIText scoreText;
+	public Text scoreText;
 	private int score;
 
 	void Start ()

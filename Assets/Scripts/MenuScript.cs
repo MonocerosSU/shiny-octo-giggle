@@ -7,7 +7,7 @@ public class MenuScript : MonoBehaviour
 {
     public void OnPlayClicked()
     {
-        SceneManager.LoadScene("AsenTestscene");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void OnExitClicked()

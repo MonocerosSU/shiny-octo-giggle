@@ -7,14 +7,16 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float tilt;
     public TiltAxis tiltAxis;
-    public Transform sceneBoundary;
 
+    private Transform sceneBoundary;
     private Boundary boundary;
     private Rigidbody rigidBody;
 
     public void Start()
     {
         this.rigidBody = this.GetComponent<Rigidbody>();
+
+        this.sceneBoundary = GameObject.FindWithTag("Boundary").transform;
         this.boundary = new Boundary(this.sceneBoundary, this.GetComponent<Collider>().bounds);
     }
 
@@ -46,7 +48,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void RestrictToScreen()
     {
-        this.rigidBody.position = new Vector3(Mathf.Clamp(this.rigidBody.position.x, this.boundary.xMin, this.boundary.xMax), Mathf.Clamp(this.rigidBody.position.y, this.boundary.yMin, this.boundary.yMax), 0.0f);
+        this.rigidBody.position =
+            new Vector3(
+                Mathf.Clamp(this.rigidBody.position.x, this.boundary.xMin, this.boundary.xMax),
+                Mathf.Clamp(this.rigidBody.position.y, this.boundary.yMin, this.boundary.yMax),
+                0.0f);
     }
 
     private void Move()
