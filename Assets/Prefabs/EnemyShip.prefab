@@ -28,7 +28,9 @@ GameObject:
   - 54: {fileID: 5478592}
   - 135: {fileID: 13539988}
   - 114: {fileID: 11478340}
+  - 114: {fileID: 11453006}
   - 114: {fileID: 11408650}
+  - 114: {fileID: 11452874}
   - 114: {fileID: 11474846}
   - 82: {fileID: 8269802}
   m_Layer: 0
@@ -383,6 +385,31 @@ MonoBehaviour:
   damageEffect: {fileID: 0}
   destructionEffect: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 2}
   hitPoints: 1000
+  scoreValue: 10
+  scoreCount: {fileID: 0}
+--- !u!114 &11452874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73381c4c9aaed684d96cfe79ad2150a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -2
+--- !u!114 &11453006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb427b20e035c54e92f56d07aeb02d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11465996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -426,9 +453,8 @@ MonoBehaviour:
     min: 1
     max: 2
   maneuverWait:
-    min: 0.5
-    max: 1.5
-  sceneBoundary: {fileID: 0}
+    min: 2
+    max: 3
 --- !u!114 &11478340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -442,8 +468,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 155602, guid: 54b6972c021bedf4f87b159ee07f80c6, type: 2}
   projectileSpawn: {fileID: 473904}
-  fireRate: 1.5
-  delay: 1.5
+  fireRate: 2.5
+  delay: 2.5
 --- !u!135 &13539988
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -3483,6 +3509,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maneuverWait.min
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maneuverWait.max
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fireRate
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: delay
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

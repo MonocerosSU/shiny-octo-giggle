@@ -5,14 +5,13 @@ using System.Collections;
 
 using Random = UnityEngine.Random;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyManeuver : MonoBehaviour
 {
     public float maxDistance;
     public float smoothing;
     public Range startWait;
     public Range maneuverTime;
     public Range maneuverWait;
-    public Transform sceneBoundary;
 
     // Movement
     private float rotationSpeed;
@@ -22,11 +21,13 @@ public class EnemyMovement : MonoBehaviour
 
     private ShieldControll shieldControll;
     private Rigidbody rigidBody;
+    private Transform sceneBoundary;
 
     public void Start()
     {
         this.shieldControll = this.GetComponentInChildren<ShieldControll>();
         this.rigidBody = this.GetComponent<Rigidbody>();
+        this.sceneBoundary = GameObject.FindWithTag("Boundary").transform;
 
         this.currentSpeed = this.GetComponent<Rigidbody>().velocity;
         this.StartCoroutine(this.EvadeCoroutine());
@@ -65,7 +66,7 @@ public class EnemyMovement : MonoBehaviour
         this.rigidBody.velocity = new Vector3(this.currentSpeed.x, newManeuver, this.currentSpeed.z);
         this.rigidBody.position =
             new Vector3(
-                Mathf.Clamp(this.rigidBody.position.x, this.boundary.xMin, this.boundary.xMax),
+                Mathf.Clamp(this.rigidBody.position.x, this.boundary.xMin - 50, this.boundary.xMax + 50),
                 Mathf.Clamp(this.rigidBody.position.y, this.boundary.yMin, this.boundary.yMax),
                 0.0f);
     }

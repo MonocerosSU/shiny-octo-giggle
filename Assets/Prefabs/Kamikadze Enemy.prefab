@@ -11,6 +11,7 @@ GameObject:
   - 54: {fileID: 5429308}
   - 65: {fileID: 6569766}
   - 114: {fileID: 11455388}
+  - 114: {fileID: 11479606}
   - 114: {fileID: 11407106}
   - 114: {fileID: 11444622}
   - 114: {fileID: 11415140}
@@ -18,7 +19,7 @@ GameObject:
   - 82: {fileID: 8273640}
   m_Layer: 0
   m_Name: Kamikadze Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,9 +59,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114566}
-  m_LocalRotation: {x: 0, y: 0.7071066, z: 0, w: -0.70710695}
-  m_LocalPosition: {x: 7.89, y: -2.21, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1.7076606}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 10.98, y: -4.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441416}
   m_Father: {fileID: 0}
@@ -124,8 +125,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5130613, y: 0.55707955, z: 1.4219649}
-  m_Center: {x: -0.016858397, y: 0.018231034, z: 0.21098301}
+  m_Size: {x: 1.6568475, y: 1.0297711, z: 1.6458067}
+  m_Center: {x: -0.08875083, y: -0.37497187, z: 0.32290408}
 --- !u!82 &8273640
 AudioSource:
   m_ObjectHideFlags: 1
@@ -136,7 +137,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 23679540f4a76924d919f1617ccf21f2, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -237,6 +238,8 @@ MonoBehaviour:
   damageEffect: {fileID: 0}
   destructionEffect: {fileID: 100004, guid: 275e4d829fb44b14bb9c196b87d47bed, type: 2}
   hitPoints: 300
+  scoreValue: 15
+  scoreCount: {fileID: 0}
 --- !u!114 &11455388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,8 +252,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  thrust: 10
-  rigidBody: {fileID: 5429308}
+  chargeDistance: 10
+  thrust: 700
+--- !u!114 &11479606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73381c4c9aaed684d96cfe79ad2150a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!114 &11497414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,7 +284,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: chargeDistance
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114566}

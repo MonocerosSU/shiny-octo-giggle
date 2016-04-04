@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Security.Policy;
 
 public class DestroyByHitpoints : MonoBehaviour
 {
@@ -10,6 +11,16 @@ public class DestroyByHitpoints : MonoBehaviour
 	public ScoreCount scoreCount;
 
     private bool isMarkedForDestruction = false;
+
+    public void Start()
+    {
+        GameObject scoreText = GameObject.FindWithTag("Score");
+        if (scoreText != null)
+        {
+            this.scoreCount = scoreText.GetComponent<ScoreCount>();
+        }
+    }
+
 	public void TakeDamage(float damage)
     {
         this.hitPoints -= damage;
@@ -34,7 +45,10 @@ public class DestroyByHitpoints : MonoBehaviour
                 this.destructionEffect, this.transform.position, this.transform.rotation);
         }
 
-        this.scoreCount.AddScore(this.scoreValue);
+        if (this.scoreCount != null)
+        {
+            this.scoreCount.AddScore(this.scoreValue);
+        }
 
         this.isMarkedForDestruction = true;
         GameObject.Destroy(this.gameObject);

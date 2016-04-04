@@ -31,7 +31,7 @@ public class PlayerAttackChoice : MonoBehaviour
             {
                 this.quickAttack.Fire();
             }
-            this.stopwatch.Stop();
+            this.stopwatch.Stop(); // Hammertime!
         }
         if (Input.GetButton("Fire1") && this.stopwatch.Time >= this.chargeTime)
         {

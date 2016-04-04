@@ -157,10 +157,12 @@ public class LaserAttack : MonoBehaviour
             return resultHit;
         }
 
-        resultHit = hits.Where(hit => hit.collider != null)
+        resultHit = hits
+            .Where(hit => hit.collider != null)
             .Where(hit => hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("Shield"))
-            .OrderBy(hit => Vector3.Distance(hit.point, this.laserSpawn.position))
-            .FirstOrDefault();
+            .ToDictionary(hit => Vector3.Distance(hit.point, this.laserSpawn.position), hit => hit)
+            .OrderBy(pair => pair.Key)
+            .FirstOrDefault(pair => pair.Key <= maxDistance).Value;
 
         return resultHit;
     }

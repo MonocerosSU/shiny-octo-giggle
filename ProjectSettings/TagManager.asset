@@ -11,6 +11,7 @@ TagManager:
   - Shield
   - Bonundary
   - Laser
+  - Score
   layers:
   - Default
   - TransparentFX
