@@ -536,7 +536,7 @@ MonoBehaviour:
   warmUpEffect: {fileID: 115030, guid: f246e45c85332eb4abdc0f293de50b97, type: 2}
   overheatTime: 2
   damagingOverheatingTime: 1.5
-  overheatDamageMultiplier: 1.5
+  overheatDamageMultiplier: 5
   overheatEffect: {fileID: 115030, guid: 56c4c5f42e9da76488e6e28b83ac3a26, type: 2}
   isFiring: 0
   laserDamage: 13

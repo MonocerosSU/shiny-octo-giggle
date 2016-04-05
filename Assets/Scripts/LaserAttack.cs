@@ -231,7 +231,6 @@ public class LaserAttack : MonoBehaviour
         }
 
         resultHit = hits
-            .Where(hit => hit.collider != null)
             .Where(hit => hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("Shield"))
             .ToDictionary(hit => Vector3.Distance(hit.point, this.laserSpawn.position), hit => hit)
             .OrderBy(pair => pair.Key)
