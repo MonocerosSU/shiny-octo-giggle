@@ -67,11 +67,11 @@ public class LaserAttack : MonoBehaviour
 
             if (this.isOverheating)
             {
-                this.PlayWarmUpEffect(ref this.overheatEffect);
+                this.PlayEffect(this.overheatEffect, this.laserSpawn.transform.position);
             }
             else
             {
-                this.PlayWarmUpEffect(ref this.warmUpEffect);
+                this.PlayEffect(this.warmUpEffect, this.laserSpawn.transform.position);
             }
         }
         else
@@ -105,9 +105,6 @@ public class LaserAttack : MonoBehaviour
         if (this.isOverheating)
         {
             this.laserWidth = Mathf.Lerp(this.laserWidth, this.initialLaserWidth * 1.5f, 0.1f);
-            
-            
-            Debug.Log(this.warmUpEffect.transform.localScale);
         }
     }
 
@@ -155,7 +152,7 @@ public class LaserAttack : MonoBehaviour
                     enemyHitpoints.TakeDamage(this.laserDamage);
                 }
 
-                this.PlayDamageEffect(hit.point);
+                this.PlayEffect(this.damageEffect, hit.point, new Quaternion(), true);
             }
         }
         
@@ -186,29 +183,34 @@ public class LaserAttack : MonoBehaviour
             this.end.transform.localScale.z);
     }
 
-    private void PlayDamageEffect(Vector3 point)
-    {
-        if (this.damageEffect == null)
-        {
-            return;
-        }
+    //private void PlayDamageEffect(Vector3 point)
+    //{
+    //    if (this.damageEffect == null)
+    //    {
+    //        return;
+    //    }
 
-        GameObject.Instantiate(this.damageEffect, point, new Quaternion());
-    }
+    //    GameObject.Instantiate(this.damageEffect, point, new Quaternion());
+    //}
     
-    private void PlayWarmUpEffect(ref GameObject warmUpEffect)
+    private void PlayEffect(
+        GameObject effect,
+        Vector3 position,
+        Quaternion rotation = new Quaternion(),
+        bool dontUseCooldown = false)
     {
-        if (warmUpEffect == null)
+        
+        if (effect == null)
         {
             return;
         }
 
         // This check prevents spawning too much of the effect.
-        if (this.currentEffectCooldown <= 0)
+        if (this.currentEffectCooldown <= 0 || dontUseCooldown)
         {
             this.currentEffectCooldown = this.effectCooldown;
             var newEffect = GameObject.Instantiate(
-                warmUpEffect, this.laserSpawn.position, this.laserSpawn.rotation) as GameObject;
+                effect, new Vector3(position.x, position.y, position.z - 0.05f), rotation) as GameObject;
 
             if (newEffect != null)
             {

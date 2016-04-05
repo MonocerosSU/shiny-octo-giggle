@@ -25,6 +25,10 @@ public class HitpointsDamager : MonoBehaviour
         if (hitpointsClass != null)
         {
             hitpointsClass.TakeDamage(this.damagePoints);
+            //if (other.CompareTag("Player"))
+            //{
+            //    Debug.Log(this.damagePoints);
+            //}
         }
     }
 }

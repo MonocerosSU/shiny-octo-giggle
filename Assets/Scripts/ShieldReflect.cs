@@ -18,6 +18,9 @@ public class ShieldReflect : MonoBehaviour {
             return;
         }
 
+        var damageScript = other.GetComponent<HitpointsDamager>();
+        damageScript.damagePoints *= 2;
+
         other.name = "Reflected projectile.";
         Rigidbody otherRigidBody = other.GetComponent<Rigidbody>();
 
