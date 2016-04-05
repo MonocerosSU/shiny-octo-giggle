@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using UnityEngine.SceneManagement;
+
 public class NoCursor : MonoBehaviour {
 
 	void Start ()
@@ -12,7 +14,7 @@ public class NoCursor : MonoBehaviour {
 	{
 		if (Input.GetKeyDown (KeyCode.Escape)) 
 		{
-			Application.LoadLevel ("MenuScene");
+			SceneManager.LoadScene("MenuScene");
 			Cursor.visible = true;
 		}
 	}

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -22,8 +23,10 @@ public class GameOverManager : MonoBehaviour
 		// If the player has run out of health...
 		if(playerHealth.hitPoints <= 0)
 		{
-			// ... tell the animator the game is over.
-			anim.SetTrigger ("GameOver");
+            Cursor.visible = true;
+
+            // ... tell the animator the game is over.
+            anim.SetTrigger ("GameOver");
 
 			// .. increment a timer to count up to restarting.
 			restartTimer += Time.deltaTime;
@@ -32,7 +35,7 @@ public class GameOverManager : MonoBehaviour
 			if(restartTimer >= restartDelay)
 			{
 				// .. then reload the currently loaded level.
-				Application.LoadLevel("MenuScene");
+				SceneManager.LoadScene("MenuScene");
 			}
 		}
 	}

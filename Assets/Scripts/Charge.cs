@@ -9,11 +9,11 @@ public class Charge : MonoBehaviour
 
     private bool isCharged;
     private Rigidbody rigidBody;
-    private AudioSource audio;
+    private AudioSource chargeSound;
 
 	void Start()
 	{
-	    this.audio = this.GetComponent<AudioSource>();
+	    this.chargeSound = this.GetComponent<AudioSource>();
 	    this.rigidBody = this.GetComponent<Rigidbody>();
 
         if (this.target == null)
@@ -41,7 +41,7 @@ public class Charge : MonoBehaviour
 
             this.transform.LookAt(this.target);
             this.rigidBody.AddForce(this.transform.forward * this.thrust);
-            this.audio.Play();
+            this.chargeSound.Play();
         }
 	    
 	}
