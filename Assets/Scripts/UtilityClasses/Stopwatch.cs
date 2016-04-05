@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Stopwatch
 {
     public bool IsRunning { get; private set; }
 
     public float Time { get; private set; }
+
+    public Stopwatch()
+    {
+        this.Time = 0;
+    }
 
     public void Update()
     {

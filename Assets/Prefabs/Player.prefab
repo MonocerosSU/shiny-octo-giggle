@@ -501,7 +501,6 @@ MonoBehaviour:
   speed: 10
   tilt: 4
   tiltAxis: 2
-  sceneBoundary: {fileID: 0}
 --- !u!114 &11463070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -532,9 +531,13 @@ MonoBehaviour:
   laserMiddle: {fileID: 111358, guid: 42077e9ada6cff94fac18c9934566d4d, type: 2}
   laserEnd: {fileID: 152126, guid: 67106cff4fec2d849b3186cdb0d605fb, type: 2}
   laserSpawn: {fileID: 400004}
-  inputWarmUpTime: 1
-  inputEffectCooldown: 0.33
+  warmUpTime: 1
+  effectCooldown: 0.33
   warmUpEffect: {fileID: 115030, guid: f246e45c85332eb4abdc0f293de50b97, type: 2}
+  overheatTime: 2
+  damagingOverheatingTime: 1.5
+  overheatDamageMultiplier: 1.5
+  overheatEffect: {fileID: 115030, guid: 56c4c5f42e9da76488e6e28b83ac3a26, type: 2}
   isFiring: 0
   laserDamage: 13
   maxLaserSize: 18
@@ -2075,7 +2078,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: overheatEffect
+      value: 
+      objectReference: {fileID: 115030, guid: 56c4c5f42e9da76488e6e28b83ac3a26, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100006}

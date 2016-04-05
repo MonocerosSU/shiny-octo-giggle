@@ -13,11 +13,24 @@ public class LaserAttack : MonoBehaviour
     public Transform laserSpawn;
 
     [Header("Warm up parameters:")]
-    public float inputWarmUpTime = 1f;
-    public float inputEffectCooldown = 0.33f;
+    public float warmUpTime = 1f;
+    public float effectCooldown = 0.33f;
     public GameObject warmUpEffect;
+    
+    private float currentWarmUpTime;
+    private float currentEffectCooldown;
 
-    [Header("Other parameters:")]
+    [Header("Overheat parameters:")]
+    public float overheatTime = 2f;
+    public float damagingOverheatingTime = 0.5f;
+    public float overheatDamageMultiplier = 1.5f;
+    public GameObject overheatEffect;
+
+    private float currentOverheatTime;
+    private bool isOverheating;
+    private bool isDamagingPlayer;
+
+    [Header("Laser parameters:")]
     public bool isFiring;
     public float laserDamage = 13f;
     public float maxLaserSize = 18f;
@@ -27,33 +40,45 @@ public class LaserAttack : MonoBehaviour
     private GameObject middle;
     private GameObject end;
 
-    private float effectCooldown;
-    private float warmUpTime;
-    private float graduallyIncreasingLaserSize;
+    private float midLaserLength;
+    private float initialLaserWidth;
+    private float laserWidth;
 
     public void Start()
     {
-        this.graduallyIncreasingLaserSize = 1;
-        this.effectCooldown = 0;
-        this.warmUpTime = this.inputWarmUpTime;
+        this.initialLaserWidth = this.laserMiddle.transform.localScale.y;
+        this.midLaserLength = 1;
+        this.currentEffectCooldown = 0;
+        this.currentWarmUpTime = this.warmUpTime;
+
+        this.ResetLaserOverheating();
     }
 
     public void Update()
     {
         if (this.isFiring)
         {
-            this.warmUpTime -= Time.deltaTime;
-            if (this.warmUpTime <= 0)
+            this.currentWarmUpTime -= Time.deltaTime;
+            if (this.currentWarmUpTime <= 0)
             {
+                this.StartLaserOverheating();
                 this.FireTheLaser();
             }
 
-            this.PlayWarmUpEffect();
+            if (this.isOverheating)
+            {
+                this.PlayWarmUpEffect(ref this.overheatEffect);
+            }
+            else
+            {
+                this.PlayWarmUpEffect(ref this.warmUpEffect);
+            }
         }
         else
         {
-            this.graduallyIncreasingLaserSize = 1;
-            this.warmUpTime = this.inputWarmUpTime;
+            this.ResetLaserOverheating();
+            this.midLaserLength = 1;
+            this.currentWarmUpTime = this.warmUpTime;
             if (this.end != null || this.middle != null || this.start != null)
             {
                 GameObject.Destroy(this.end);
@@ -63,6 +88,37 @@ public class LaserAttack : MonoBehaviour
         }
     }
 
+    private void StartLaserOverheating()
+    {
+        this.currentOverheatTime -= Time.deltaTime;
+        if (this.currentOverheatTime <= 0 && !this.isOverheating)
+        {
+            this.isOverheating = true;
+        }
+
+        if (this.isOverheating && this.currentOverheatTime + this.damagingOverheatingTime <= 0 && !this.isDamagingPlayer)
+        {
+            this.laserWidth *= 0.5f;
+            this.isDamagingPlayer = true;
+        }
+
+        if (this.isOverheating)
+        {
+            this.laserWidth = Mathf.Lerp(this.laserWidth, this.initialLaserWidth * 1.5f, 0.1f);
+            
+            
+            Debug.Log(this.warmUpEffect.transform.localScale);
+        }
+    }
+
+    private void ResetLaserOverheating()
+    {
+        this.currentOverheatTime = this.overheatTime;
+        this.isOverheating = false;
+        this.isDamagingPlayer = false;
+        this.laserWidth = this.initialLaserWidth;
+    }
+
     private void FireTheLaser()
     {
         // Create the laser from the prefabs
@@ -70,30 +126,45 @@ public class LaserAttack : MonoBehaviour
         this.InstantiateWeaponPart(ref this.middle, ref this.laserMiddle);
         this.InstantiateWeaponPart(ref this.end, ref this.laserEnd);
 
-        this.graduallyIncreasingLaserSize++;
-        float currentLaserSize = Mathf.Min(this.maxLaserSize, this.graduallyIncreasingLaserSize);
+        this.midLaserLength++;
+        float currentLaserSize = Mathf.Min(this.maxLaserSize, this.midLaserLength);
 
-        // Raycast at the right as our sprite has been design for that
+        // Raycast to the right, since the player is shooting to the right.
         Vector3 laserDirection = this.laserSpawn.forward;
-        
         RaycastHit[] hits = Physics.RaycastAll(this.laserSpawn.position, laserDirection);
         RaycastHit hit = this.CheckHits(hits, currentLaserSize);
         
         if (hit.collider != null)
         {
             //Debug.Log("Hitting " + hit.collider.gameObject.name);
-
-            // Get the distance to target
+            
             currentLaserSize = Mathf.Min(
                 Vector3.Distance(hit.point, this.laserSpawn.position),
-                this.graduallyIncreasingLaserSize);
+                this.midLaserLength);
 
-            // Damage target
-            DestroyByHitpoints hitpointsClass = hit.collider.GetComponent<DestroyByHitpoints>();
-            if (hitpointsClass != null)
+            // Damage target if there is one.
+            DestroyByHitpoints enemyHitpoints = hit.collider.GetComponent<DestroyByHitpoints>();
+            if (enemyHitpoints != null)
             {
-                hitpointsClass.TakeDamage(this.laserDamage);
+                if (this.isOverheating)
+                {
+                    enemyHitpoints.TakeDamage(this.laserDamage * this.overheatDamageMultiplier);
+                }
+                else
+                {
+                    enemyHitpoints.TakeDamage(this.laserDamage);
+                }
+
                 this.PlayDamageEffect(hit.point);
+            }
+        }
+        
+        if (this.isDamagingPlayer)
+        {
+            DestroyByHitpoints playerHitpoints = this.GetComponent<DestroyByHitpoints>();
+            if (playerHitpoints != null)
+            {
+                playerHitpoints.TakeDamage(this.laserDamage);
             }
         }
 
@@ -104,14 +175,15 @@ public class LaserAttack : MonoBehaviour
         // -- the middle is after start and, as it has a center pivot, have a size of half the laser (minus start and end)
         this.middle.transform.localScale = new Vector3(
             currentLaserSize - startSpriteWidth,
-            this.middle.transform.localScale.y,
+            this.laserWidth,
             this.middle.transform.localScale.z);
         this.middle.transform.localPosition = new Vector3(0f, 0f, currentLaserSize / 2f);
-        
-        if (this.end != null)
-        {
-            this.end.transform.localPosition = new Vector3(0f, 0f, currentLaserSize);
-        }
+
+        this.end.transform.localPosition = new Vector3(0f, 0f, currentLaserSize);
+        this.end.transform.localScale = new Vector3(
+            this.end.transform.localScale.x,
+            this.laserWidth,
+            this.end.transform.localScale.z);
     }
 
     private void PlayDamageEffect(Vector3 point)
@@ -122,22 +194,21 @@ public class LaserAttack : MonoBehaviour
         }
 
         GameObject.Instantiate(this.damageEffect, point, new Quaternion());
-
     }
     
-    private void PlayWarmUpEffect()
+    private void PlayWarmUpEffect(ref GameObject warmUpEffect)
     {
-        if (this.warmUpEffect == null)
+        if (warmUpEffect == null)
         {
             return;
         }
 
         // This check prevents spawning too much of the effect.
-        if (this.effectCooldown <= 0)
+        if (this.currentEffectCooldown <= 0)
         {
-            this.effectCooldown = this.inputEffectCooldown;
+            this.currentEffectCooldown = this.effectCooldown;
             var newEffect = GameObject.Instantiate(
-                this.warmUpEffect, this.laserSpawn.position, this.laserSpawn.rotation) as GameObject;
+                warmUpEffect, this.laserSpawn.position, this.laserSpawn.rotation) as GameObject;
 
             if (newEffect != null)
             {
@@ -145,7 +216,7 @@ public class LaserAttack : MonoBehaviour
             }
         }
 
-        this.effectCooldown -= Time.deltaTime;
+        this.currentEffectCooldown -= Time.deltaTime;
     }
 
     private RaycastHit CheckHits(RaycastHit[] hits, float maxDistance)
